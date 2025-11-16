@@ -10096,16 +10096,40 @@ p.lead {
   border-radius: 100%;
   font-size: 1.5rem;
   margin-right: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .social-icons .social-icon:last-child {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
   background-color: #bd5d38;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(189, 93, 56, 0.3);
 }
 
 .dev-icons {
   font-size: 3rem;
+}
+
+.dev-icons .list-inline-item {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+.dev-icons .list-inline-item:hover {
+  transform: translateY(-5px) scale(1.1);
+  opacity: 1;
+}
+
+.dev-icons img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.9);
+}
+
+.dev-icons img:hover {
+  transform: translateY(-5px) scale(1.1);
+  filter: brightness(1);
 }
 
 section.resume-section {
@@ -10116,9 +10140,42 @@ section.resume-section {
   padding-top: 5rem;
   padding-bottom: 5rem;
   max-width: 75rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
 section.resume-section .resume-section-content {
   width: 100%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.resume-section:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+section.resume-section:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+section.resume-section:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+section.resume-section:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+section.resume-section:nth-child(5) {
+  animation-delay: 0.5s;
 }
 
 @media (min-width: 768px) {
@@ -10132,5 +10189,107 @@ section.resume-section .resume-section-content {
     padding-right: 3rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+}
+/* Modern Experience Cards */
+#experience .d-flex {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  background-color: rgba(189, 93, 56, 0.03);
+  border-left: 3px solid transparent;
+}
+
+#experience .d-flex:hover {
+  background-color: rgba(189, 93, 56, 0.08);
+  border-left-color: #bd5d38;
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+#experience h3 {
+  color: #343a40;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+#experience p {
+  color: #6c757d;
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Certification Badge Styling */
+.fa-certificate {
+  font-size: 1.2rem;
+}
+
+.subheading {
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.subheading::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #bd5d38;
+}
+
+/* Skills Section Enhancement */
+#skills ul.fa-ul {
+  margin-top: 1.5rem;
+}
+
+#skills ul.fa-ul li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #495057;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better heading spacing */
+h2.mb-5 {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+h2.mb-5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #bd5d38, rgba(189, 93, 56, 0.3));
+  border-radius: 2px;
+}
+
+/* Enhanced typography */
+.lead {
+  line-height: 1.8;
+  color: #495057;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  #experience .d-flex {
+    padding: 1rem;
+  }
+  
+  .dev-icons {
+    font-size: 2.5rem;
+  }
+  
+  h1 {
+    font-size: 4rem;
   }
 }
